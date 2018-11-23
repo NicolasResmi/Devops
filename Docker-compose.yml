@@ -1,0 +1,22 @@
+
+
+version: "3.1"
+
+services:
+  redis :
+      image: "redis:latest" #Image que l'on souhaite utiliser
+        - "redis-persistence:/var/lib/redis/data"
+  database:
+    image: "postgres:latest"
+    restart: "unless-stopped" # never / always ...
+    environment:
+      POSTGRES_DB:  "courswfs" # nom de la bdd à créer sur postgresql
+      POSTGRES_USER: "nicolas" # user qui pourra accéder à la bdd
+      POSTGRES_PASSWORD: "qwerty" # mot de passe assigné au user
+    volumes:
+      - "cours:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+
+volumes:
+  cours:
