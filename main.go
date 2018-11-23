@@ -10,6 +10,8 @@ import (
 
 func main() {
 
+	// connection := os.Getenv("DATABASE_URL")
+
 	port := os.Getenv("PORT") // le port est égale à celui définit par Heroku
 	if port == "" {
 		port = "8080"
@@ -23,6 +25,9 @@ func main() {
 		// ReadTimeout:  10 * time.Second,
 		// WriteTimeout: 10 * time.Second,
 	}
+
 	fmt.Println("Server is running at", port)
+	fmt.Println("it is ok")
+
 	log.Fatal(server.ListenAndServe())
 }
