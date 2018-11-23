@@ -26,8 +26,8 @@ func main() {
 		// WriteTimeout: 10 * time.Second,
 	}
 
+	fmt.Println("it is okkkkkkkkkkkkkk 2")
 	fmt.Println("Server is running at", port)
-	fmt.Println("it is ok")
 
 	log.Fatal(server.ListenAndServe())
 }
