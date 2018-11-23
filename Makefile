@@ -7,3 +7,4 @@ status:
 
 push:
 	git push origin master
+	terraform apply
